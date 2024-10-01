@@ -55,3 +55,8 @@ for app in "${!aur_pkg[@]}"; do
         yay -S --noconfirm "${app}"
     fi
 done
+
+# install apps
+if [[ -f GUI.sh ]]; then
+    ./GUI.sh
+fi
