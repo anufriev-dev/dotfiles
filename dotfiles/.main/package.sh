@@ -56,7 +56,7 @@ for app in "${!aur_pkg[@]}"; do
     fi
 done
 
-# install apps
+# install GUI apps
 if [[ -f GUI.sh ]]; then
     ./GUI.sh
 fi
