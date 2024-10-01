@@ -1,1 +1,1 @@
-Base Linux config
+Pacman settings
