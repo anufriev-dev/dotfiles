@@ -1,1 +1,1 @@
-Pacman settings
+KDE settings
