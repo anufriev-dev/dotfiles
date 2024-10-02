@@ -60,3 +60,9 @@ done
 if [[ -f GUI.sh ]]; then
     ./GUI.sh
 fi
+
+
+# Установка расширений для vs code
+if command -v code &> /dev/null; then
+    cat ./.vscode/extensions.txt | xargs --max-args=1 code --install-extension
+fi
