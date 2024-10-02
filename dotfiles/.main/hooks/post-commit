@@ -24,3 +24,39 @@ case $BASE_BRANCH in
     "linux-pacman") $GIT checkout linux-pacman;; # если на ветке linux-pacman
     "linux-pacman-kde") $GIT checkout linux-pacman-kde;; # если на ветке linux-pacman-kde
 esac
+=======
+cf="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+extension_path=$HOME/dotfiles/.main/.vscode/extensions.txt
+git rev-parse --abbrev-ref HEAD
+
+
+# если мы не на linux, то нужно переключится на ветку линукс, и выполнить ci --allow-empty -m "vs code list ext update", тогда он подхватит pre-commit
+
+
+BASE_BRANCH=$($cf rev-parse --abbrev-ref HEAD)
+
+if [[ $BASE_BRANCH != "linux" ]]; then
+    code --list-extensions > $extension_path
+
+    if ! $cf diff --quiet $extension_path; then
+        $cf switch linux
+        $cf add $extension_path
+        $cf commit -m "vs code list ext update"
+        $cf switch $BASE_BRANCH
+    fi
+fi
+
+
+# если на ветке linux то:
+if [[ $BASE_BRANCH = "linux" ]]; then
+    $cf rebase linux linux-pacman
+    $cf rebase linux-pacman linux-pacman-kde
+    $cf checkout linux
+fi
+
+# если на ветке linux-pacman то:
+if [[ $BASE_BRANCH = "linux-pacman" ]]; then
+    $cf rebase linux-pacman linux-pacman-kde
+    $cf checkout linux-pacman
+fi
+>>>>>>> 84a2c99 (m: post;pre commit 2)

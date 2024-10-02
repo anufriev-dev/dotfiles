@@ -3,6 +3,9 @@ set -a
 set +a
 
 if [[ $($GIT rev-parse --abbrev-ref HEAD) = "linux" ]]; then
+=======
+if [[ $($cf rev-parse --abbrev-ref HEAD) = "linux" ]]; then
+>>>>>>> 84a2c99 (m: post;pre commit 2)
 	if command -v code &> /dev/null; then
 		# update vs code extensions
 		code --list-extensions > $EXT_PATH
