@@ -58,7 +58,7 @@ done
 
 # install GUI apps
 if [[ -f GUI.sh ]]; then
-    ./GUI.sh
+    . ./GUI.sh
 fi
 
 
