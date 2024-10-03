@@ -57,8 +57,8 @@ for app in "${!aur_pkg[@]}"; do
 done
 
 # install GUI apps
-if [[ -f GUI.sh ]]; then
-    . ./GUI.sh
+if [[ -f gui.sh ]]; then
+    . ./gui.sh
 fi
 
 
