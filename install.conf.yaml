@@ -19,7 +19,6 @@
     ~/.local/share/konsole/my.profile: share/my.profile
 
 - shell:
-  - git submodule update --init --recursive
   - ./template/install.sh
   - ./share/install.sh
   - ./installs/install.sh
