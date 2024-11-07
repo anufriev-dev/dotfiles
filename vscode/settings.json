@@ -1,0 +1,128 @@
+{
+    // Общие настройки редактора
+    "editor.codeLensFontFamily": "'Fira Code'", // Шрифт для отображения CodeLens
+    "editor.fontLigatures": true, // Включает лигатуры шрифтов
+    "editor.fontWeight": "400", // Устанавливает толщину шрифта
+    "editor.cursorStyle": "line-thin", // Устанавливает стиль курсора
+    "editor.renderWhitespace": "boundary", // Отображает пробелы только в границах текста
+    "editor.tabCompletion": "on", // Включает автозаполнение табуляцией
+    "editor.minimap.enabled": false, // Отключает мини-карту кода
+    "editor.fontFamily": "'FiraCode Nerd Font Light' ,'Droid Sans Mono', 'monospace', monospace", // Устанавливает семейство шрифтов для редактора
+    "editor.unicodeHighlight.nonBasicASCII": false, // Отключает подсветку не базовых символов ASCII в редакторе
+    "editor.unicodeHighlight.includeStrings": false, // Отключает подсветку строк с не базовыми символами ASCII
+    "editor.unicodeHighlight.invisibleCharacters": false, // Отключает подсветку невидимых символов в редакторе
+    "editor.stickyScroll.enabled": false, // Отключает функцию "липкой прокрутки", которая фиксирует текущие области кода в верхней части редактора.
+
+
+    // Настройки работы с файлами
+    "files.autoGuessEncoding": true, // Автоматически определяет кодировку файлов
+    "files.insertFinalNewline": true, // Добавляет пустую строку в конце файла
+    "files.readonlyFromPermissions": true, // Устанавливает режим только для чтения на основе прав доступа
+    "files.simpleDialog.enable": true, // Включает простые диалоги для работы с файлами
+    "files.trimFinalNewlines": true, // Удаляет лишние пустые строки в конце файла
+    "files.trimTrailingWhitespace": true, // Удаляет пробелы в конце строк
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": false,
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/CVS": false,
+        "**/Thumbs.db": false
+    }, // Исключает указанные файлы и папки из обозревателя файлов
+
+    // Настройки рабочего пространства
+    "workbench.enableExperiments": false, // Отключает эксперименты в рабочем пространстве
+    "workbench.startupEditor": "none", // Устанавливает поведение редактора при запуске (нет)
+    "workbench.welcomePage.walkthroughs.openOnInstall": false, // Отключает открытие обучающих материалов при установке
+    "workbench.sideBar.location": "right", // Устанавливает расположение боковой панели (справа)
+    "workbench.iconTheme": "vscode-icons", // Устанавливает тему значков для рабочего пространства
+    "workbench.tips.enabled": false, // Отключает советы по использованию редактора
+    "workbench.editor.defaultBinaryEditor": "hexEditor.hexedit", // Устанавливает редактор по умолчанию для бинарных файлов
+    "workbench.settings.enableNaturalLanguageSearch": false, // Отключает поиск настроек на естественном языке
+
+    // Темы и цветовые схемы
+    "workbench.preferredHighContrastColorTheme": "One Dark Pro", // Предпочтительная тема для высококонтрастного режима (темная)
+    "workbench.preferredHighContrastLightColorTheme": "Atom One Light", // Предпочтительная светлая тема для высококонтрастного режима
+    "workbench.preferredDarkColorTheme": "One Dark Pro", // Предпочтительная темная цветовая схема
+    "workbench.preferredLightColorTheme": "Atom One Light", // Предпочтительная светлая цветовая схема
+
+    "window.autoDetectColorScheme": true, // Автоматически определяет цветовую схему системы
+    "window.autoDetectHighContrast": false, // Отключает автоматическое определение высококонтрастного режима
+
+    // Безопасность
+    "security.workspace.trust.banner": "never", // Никогда не показывать баннер доверия к рабочему пространству
+    "security.workspace.trust.emptyWindow": false, // Отключает доверие к пустому окну рабочего пространства
+    "security.workspace.trust.enabled": false, // Отключает систему доверия к рабочему пространству
+    "security.workspace.trust.startupPrompt": "never", // Никогда не показывать запрос доверия при запуске
+    "security.workspace.trust.untrustedFiles": "open",
+
+    // Обновления
+    "update.mode": "none", // Отключает автоматические обновления VS Code
+    "update.showReleaseNotes": false, // Не показывать заметки о релизах при обновлении
+
+    // Проводник
+    "explorer.compactFolders": false, // Отключает компактный режим папок в проводнике файлов
+    "explorer.incrementalNaming": "smart", // Умное именование новых файлов/папок
+
+    // Поиск
+    "search.actionsPosition": "auto", // Автоматическое размещение действий поиска
+    "search.maxResults": null, // Максимальное количество результатов поиска (нет ограничений)
+
+    // Расширения
+    "extensions.ignoreRecommendations": true, // Игнорировать рекомендации по установке расширений
+    "extensions.autoCheckUpdates": false, // Отключить автоматическую проверку обновлений расширений
+    "extensions.autoUpdate": false, // Отключить автоматическое обновление расширений
+
+    // terminal
+    "terminal.integrated.cursorStyleInactive": "none", // Стиль курсора в не фокуса (нет)
+    "terminal.integrated.cursorStyle": "line", // Стиль курсора в фокусе (линия)
+    "terminal.integrated.enableImages": true, // Включает отображение изображений в терминале
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono Med', monospace", // Шрифт для терминала
+    "terminal.integrated.fontSize": 14, // Размер шрифта в терминале
+    "terminal.integrated.scrollback": 1337, // Максимальное количество строк прокрутки в терминале
+    "terminal.integrated.shellIntegration.history": 128, // Максимальное количество команд в истории терминала
+    "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen", // Цвет вкладок терминала по умолчанию
+    "terminal.integrated.tabs.location": "left", // Расположение вкладок терминала (слева)
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+    // Настройки блокнотов:
+    "notebook.backup.sizeLimit": 12345,  // Ограничение размера резервной копии блокнота
+    "notebook.compactView": false,  // Отключить компактный вид блокнота
+    "notebook.consolidatedRunButton": true,  // Включить объединенную кнопку запуска в блокноте
+    "notebook.insertFinalNewline": true,  // Вставлять конечную новую строку в блокноте
+    "notebook.lineNumbers": "on",  // Включить номера строк в блокноте
+
+    // Редактор различий
+    "diffEditor.ignoreTrimWhitespace": false,  // Не игнорировать пробелы при сравнении файлов в редакторе различий
+    "diffEditor.maxFileSize": 0, // Устанавливает максимальный размер файла для сравнения (0 - без ограничений)
+
+    // Другие настройки
+    "telemetry.telemetryLevel": "off", // Отключает телеметрию (сбор данных о использовании)
+    "http.systemCertificates": false, // Отключает использование системных сертификатов HTTP
+    "zenMode.hideLineNumbers": false,  // Показывать номера строк в режиме Zen
+    "task.allowAutomaticTasks": "off",  // Запретить автоматические задачи
+    "issueReporter.experimental.auxWindow": false, // Отключить экспериментальный репортер проблем в отдельном окне.
+
+    // JavaScript
+    "javascript.updateImportsOnFileMove.enabled": "always", // Автоматически обновляет импорты при перемещении файлов JavaScript
+
+    // Скачанные расширения
+
+    // Для Live Server
+    "liveServer.settings.donotShowInfoMsg": true,  // Не показывать информационные сообщения Live Server
+    "liveServer.settings.donotVerifyTags": true,  // Не проверять теги HTML Live Server
+    "liveServer.settings.fullReload": true, // Полная перезагрузка при изменении файлов
+
+    // Для Power Mod
+    "powermode.enabled": true, // Включает режим Power Mod, добавляющий визуальные эффекты при наборе текста
+    "powermode.shake.enabled": false, // Отключает эффект "тряски" при наборе текста
+    "powermode.combo.counterSize": 0, // Устанавливает размер счетчика комбинаций (0 - отключено)
+
+    // Для Hex Editor
+    "hexeditor.showOpenFileButton": true, // Показывает кнопку открытия файла в редакторе шестнадцатеричного кода
+    // Для HTML CSS Support
+    "css.styleSheets": [
+        "**/*.css"
+    ],
+    "python.createEnvironment.trigger": "off",
+}

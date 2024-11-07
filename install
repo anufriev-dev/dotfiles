@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ -f "/etc/arch-release" ]; then
+    installs/arch-pacman.sh
+fi
+
+
 set -e
 
 CONFIG="install.conf.yaml"

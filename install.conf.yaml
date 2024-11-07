@@ -1,5 +1,24 @@
-- clean: ['~']
+- defaults:
+    link:
+      create: true
+      relink: true
+    shell:
+      stdout: true
+      stdin: true
+      stderr: true
+      quiet: false
+
+- clean: ['~', '~/.config']
 
 - link:
+    ~/.bashrc: .bashrc
+    ~/.config/git: git
+    ~/.config/Code/User/settings.json: vscode/settings.json
+    ~/.config/Code/User/snippets: vscode/snippets
+    ~/.local/share/konsole/my.profile: share/my.profile
 
-
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - ./template/install.sh
+  - ./vscode/install.sh
+  - ./share/install.sh

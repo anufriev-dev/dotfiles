@@ -1,0 +1,7 @@
+[user]
+	# id key (GPG) or public key (SSH) [by default gpg]
+	# signingkey =
+
+[core]
+	# [ssh command] будет выполнятся перед сетевыми командами типа push, fetch и т.д.
+	# sshCommand = ssh -i ~/.ssh/<your secret key>

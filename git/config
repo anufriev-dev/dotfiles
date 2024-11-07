@@ -1,0 +1,58 @@
+[user]
+	name = Anufriev Georgy
+	email = g@anufriev.info
+	username = anufriev-dev
+
+[core] # Base setting git, and it behaviour
+	autocrlf = input # то, как будет обрабатываться окончание строки
+	editor = nano
+
+[commit]
+	gpgSign = true # Автоматическая подпись коммита
+
+[tag]
+	gpgSign = true	# Автоматическая подпись тегов
+
+[alias]
+	st=status
+	br=branch
+	ci=commit
+	sw=switch
+	co=checkout
+	ec=config --global --edit # change global configuration
+	cm=!git add -A && git commit -m
+
+	last=log -1 HEAD
+
+	# сохраняет жёсткий сброс в reflog, на всякий случай
+	wipe="!git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard"
+	# форматированный вывод для log
+	lol = log --oneline --graph --decorate --all
+	# Show list for git settings
+	cg = "!git config --global --list"
+	cl = "!git config --local --list"
+	cs = "!git config --system --list"
+
+
+[push]
+	default = current 	# Стратегия по умолчанию для команды git push
+    followTags = true 	# auto push for tags
+
+[include]
+	path = config_local
+
+# настройка подписи коммитов [optional]
+#[gpg]
+#	format = ssh # Формат GPG or SSH
+
+# [protocol "file"]
+# 	allow = always # разрешает копировать файлы из локальных репозиториев
+
+# для работы с локальным репо [optional]
+# когда 2 репозитория равны, у никх у обоих активны ветки, то эта настройка
+# позволит принудительно изменять файлы, что не рекомендуется в центральных репо
+# [receive]
+# denyCurrentBranch = ignore|warn|refuse
+# ignore - чтобы обойти ограничение на изменения в активной ветке репо другим репо
+# warn - тоже что и ignore, но выводит предупреждение
+# refuse - по умолчанию, блокирует изменения активной ветки репо друким репо
