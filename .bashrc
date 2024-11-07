@@ -38,10 +38,6 @@ alias ports="ss -tulnp" # check ports
 # Rust
 . "$HOME/.cargo/env" &> /dev/null
 
-# config dotfiles
-alias cf="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
-alias cfd="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME/dotfiles-dev"
-
 # shell view
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\t[\1]/'
