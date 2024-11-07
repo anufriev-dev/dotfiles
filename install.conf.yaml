@@ -19,7 +19,8 @@
     ~/.local/share/konsole/my.profile: share/my.profile
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+  - git submodule update --init --recursive
   - ./template/install.sh
-  - ./vscode/install.sh
   - ./share/install.sh
+  - ./installs/install.sh
+  - ./vscode/install.sh
