@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 
-# Установка расширений для vs code
 read -p "Install all applications for arch-pacman? (y/n): " answer
 
 if ! [[ $answer =~ ^[Yy]$ || -z $answer ]]; then
