@@ -22,4 +22,3 @@
   - ./template/install.sh
   - ./share/install.sh
   - ./installs/install.sh
-  - ./vscode/install.sh

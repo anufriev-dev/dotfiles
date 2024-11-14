@@ -1,64 +1,92 @@
 #!/usr/bin/bash
 
 
-read -p "Install all applications for arch-pacman? (y/n): " answer
+read -p "Запустить установщик pacman? [Y/n]: " answer
 
-if ! [[ $answer =~ ^[Yy]$ || -z $answer ]]; then
+if ! [[ $answer =~ ^(Y|y|yes)$ || -z $answer ]]; then
     exit 0
 fi
-
 
 # Обновляем систему
 sudo pacman -Syu --noconfirm
 
-
-declare -A packages=(
-    ["git"]="git"            # Система контроля версий
-
-    ["vim"]="vim"            # Мощный текстовый редактор
-    ["nano"]="nano"          # Простой и удобный текстовый редактор
-
-    ["fzf"]="fzf"            # Интерфейс командной строки для поиска
-    ["zoxide"]="zoxide"      # Улучшенная команда cd
-    ["curl"]="curl"          # Инструмент для передачи данных с URL
-    ["tokei"]="tokei"        # Подсчет строк, файлов и директорий в проекте
-    ["thefuck"]="fuck"       # Утилита для исправления ошибок в командной строке
-    ["lsd"]="lsd"            # Альтернативная версия команды ls с цветным выводом
-    ["bat"]="bat"            # Утилита для просмотра файлов с подсветкой синтаксиса
-    ["dog"]="dog"            # Утилита для DNS-запросов
-    ["iproute2"]="ip"        # Утилита для управления сетевыми интерфейсами и маршрутизацией
-    ["ripgrep"]="rg"         # Быстрый инструмент для поиска текста
-    ["ncdu"]="ncdu"          # Утилита для анализа использования дискового пространства
-    ["ranger"]="ranger"      # Текстовый файловый менеджер с интерфейсом в стиле Vim
-    ["tmux"]="tmux"          # Мультиплексор терминала, позволяющий разделять терминал на панели
-
-    ["ttf-firacode-nerd"]="ttf-firacode-nerd" # шрифт fira code с дополнительными иконками
-)
-
-# Cначала ставим пакеты из основного репозитория
-for app_key in ${!packages[@]}; do
-    if ! command -v "${packages[$app_key]}" &> /dev/null; then
-        sudo pacman -S "${app_key}" --noconfirm
-    fi
-done
-
 # Устанавливаем yay, если он еще не установлен
-if ! command -v yay &> /dev/null; then
+if ! pacman -Q yay &> /dev/null; then
     sudo pacman -S --needed git base-devel
     mkdir -p ~/opt
     git clone https://aur.archlinux.org/yay.git ~/opt/yay
-    cd ~/opt/yay
+    cd ~/opt/yay || exit 1
     makepkg -si --noconfirm
-    cd ~/opt
+    cd ~/opt || exit 1
 fi
 
-declare -A aur_pkg=(
-    ["visual-studio-code-bin"]="code" # редактор кода visual studio code
+# Объявляем массивы с пакетами
+minimal_pkgs=(
+    git            # Система контроля версий
+    less           # Просмотр текстовых файлов
+    vim            # Мощный текстовый редактор
+    nano           # Простой и удобный текстовый редактор
+    tree           # Дерево файлов
+    htop           # Улучшенный top
+    fzf            # Интерфейс командной строки для поиска
+    zoxide         # Улучшенная команда cd
+    curl           # Инструмент для передачи данных с URL
+    tokei          # Подсчет строк, файлов и директорий в проекте
+    thefuck        # Утилита для исправления ошибок в командной строке
+    lsd            # Альтернативная версия команды ls с цветным выводом
+    bat            # Утилита для просмотра файлов с подсветкой синтаксиса
+    dog            # Утилита для DNS-запросов
+    iproute2       # Утилита для управления сетевыми интерфейсами и маршрутизацией
+    ripgrep        # Быстрый инструмент для поиска текста
+    ncdu           # Утилита для анализа использования дискового пространства
+    ranger         # Текстовый файловый менеджер с интерфейсом в стиле Vim
+    tmux           # Мультиплексор терминала, позволяющий разделять терминал на панели
+    ttf-firacode-nerd  # шрифт fira code с дополнительными иконками
 )
 
-# Установка необходимых приложений через yay
-for app in "${!aur_pkg[@]}"; do
-    if ! command -v "${aur_pkg[$app]}" &> /dev/null; then
-        yay -S --noconfirm "${app}"
+additional_pkgs=(
+    ifuse                  # Подключение файловой системы iPhone или iPod Touch
+    yt-dlp                 # Скачать видео с YouTube
+    solanum                # Таймер
+    calibre                # Управления электронной библиотекой
+    gnome-calculator       # Калькулятор
+    gnome-disk-utility     # Управление дисками
+    keepassxc              # Управление базой данных паролей
+    libreoffice-fresh-ru   # Офисный пакет на русском языке
+    obsidian               # Управление базой знаний
+    qbittorrent            # Торрент клиент
+    spectacle              # Захват экрана
+)
+
+aur_pkgs=(
+    visual-studio-code-bin  # редактор кода visual studio code
+)
+
+# Cначала ставим базовые пакеты
+for pkg in "${minimal_pkgs[@]}"; do
+    if ! pacman -Q "$pkg" &> /dev/null; then
+        sudo pacman -S "$pkg" --noconfirm
     fi
 done
+
+read -p "Установить дополнительные пакеты? [Y/n]: " answer
+
+if [[ $answer =~ ^(Y|y|yes)$ || -z $answer ]]; then
+   for pkg in "${additional_pkgs[@]}"; do
+       if ! pacman -Q "$pkg" &> /dev/null; then
+           sudo pacman -S "$pkg" --noconfirm
+       fi
+   done
+
+   # Установка необходимых приложений через yay
+   for pkg in "${aur_pkgs[@]}"; do
+       if ! pacman -Q "$pkg" &> /dev/null; then
+           yay -S --noconfirm "$pkg"
+       fi
+   done
+
+   # Установка расширений для vscode
+   if pacman -Q code &> /dev/null; then
+       vscode/install.sh
+   fi
+fi
