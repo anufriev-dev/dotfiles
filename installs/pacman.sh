@@ -66,6 +66,7 @@ aur_pkgs=(
 # Cначала ставим базовые пакеты
 for pkg in "${minimal_pkgs[@]}"; do
     if ! pacman -Q "$pkg" &> /dev/null; then
+        # echo "Установка базового пакета ${pkg}"
         sudo pacman -S "$pkg" --noconfirm
     fi
 done
@@ -73,21 +74,24 @@ done
 read -p "Установить дополнительные пакеты? [Y/n]: " answer
 
 if [[ $answer =~ ^(Y|y|yes)$ || -z $answer ]]; then
-   for pkg in "${additional_pkgs[@]}"; do
-       if ! pacman -Q "$pkg" &> /dev/null; then
-           sudo pacman -S "$pkg" --noconfirm
-       fi
-   done
+    for pkg in "${additional_pkgs[@]}"; do
+        if ! pacman -Q "$pkg" &> /dev/null; then
+            # echo "Установка дополнительного пакета ${pkg}"
+            sudo pacman -S "$pkg" --noconfirm
+        fi
+    done
 
    # Установка необходимых приложений через yay
-   for pkg in "${aur_pkgs[@]}"; do
-       if ! pacman -Q "$pkg" &> /dev/null; then
-           yay -S --noconfirm "$pkg"
-       fi
-   done
+    for pkg in "${aur_pkgs[@]}"; do
+        if ! pacman -Q "$pkg" &> /dev/null; then
+            # echo "Установка пакета ${pkg} через yay"
+            yay -S --noconfirm "$pkg"
+        fi
+    done
 
    # Установка расширений для vscode
-   if pacman -Q code &> /dev/null; then
-       vscode/install.sh
-   fi
+    if pacman -Q code &> /dev/null; then
+        # echo "Установка расширений vscode"
+        vscode/install.sh
+    fi
 fi

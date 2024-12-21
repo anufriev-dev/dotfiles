@@ -14,6 +14,7 @@
 - link:
     ~/.bashrc: .bashrc
     ~/.config/git: git
+    ~/.config/nano/nanorc: .nanorc
     ~/.config/Code/User/settings.json: vscode/settings.json
     ~/.config/Code/User/snippets: vscode/snippets
     ~/.local/share/konsole/my.profile: share/my.profile

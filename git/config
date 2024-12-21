@@ -20,6 +20,7 @@
 	sw=switch
 	co=checkout
 	ec=config --global --edit # change global configuration
+	ecl=!nano ~/.config/git/config_local
 	cm=!git add -A && git commit -m
 
 	last=log -1 HEAD
@@ -36,7 +37,7 @@
 
 [push]
 	default = current 	# Стратегия по умолчанию для команды git push
-    followTags = true 	# auto push for tags
+	followTags = true 	# auto push for tags
 
 [include]
 	path = config_local
