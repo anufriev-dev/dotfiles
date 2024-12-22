@@ -36,8 +36,8 @@
 
 
 [push]
-	default = current 	# Стратегия по умолчанию для команды git push
-	followTags = true 	# auto push for tags
+	default = current	# Стратегия по умолчанию для команды git push
+	followTags = true	# auto push for tags
 
 [include]
 	path = config_local

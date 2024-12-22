@@ -1,23 +1,34 @@
 # Source: https://www.nano-editor.org/dist/latest/nano.html#Settings
 
+# параметры cli:
+# современный синтаксис: -/
+
+# команды:
+# M-P (Alt + P) : показывать пробелы и табуляцию
+
 # цвета
 # [bold,][italic,] pink, purple, mauve, lagoon, mint, lime, peach, orange,
 # latte, rosy, beet, plum, sea, sky, slate, teal, sage, brown,
-# ocher, sand, tawny, brick, crimson, и normal, red
+# ocher, sand, tawny, brick, crimson, и normal
 
 
 # подключение стандартного набора подсветки синтаксиса
 include "/usr/share/nano/*.nanorc"
 include "/usr/share/nano/extra/*.nanorc"
 
+# set backup # при сохранении файла создайте резервную копию его предыдущей версии, используя текущее имя файла с суффиксом тильда ( ~).
+# set backupdir "~/.backup/nano" # назначить отдельное место хранения всех сохраняемых файлов
+
+
 set mouse      # включает поддержку мыши
 set smarthome  # поддержка key home on keyboard
+set positionlog # сохраняет позицию курсора после закрытия файла
 
-# Нумерация строк
+# нумерация строк
 set linenumbers # включить слева
 set numbercolor italic,plum # цвет
 
-# Перенос строк
+# перенос строк
 set softwrap       # автоматический перенос строк
 set atblanks       # мягкий перенос строк по пробелам и табам
 # set breaklonglines # сокращение длинных строк в одну строку
@@ -34,7 +45,7 @@ set tabsize 4 # размер табуляции
 set emptyline # пустая строка в начале
 set statuscolor mint,black # цвет строки состояния
 set constantshow  # отображает позицию курсора в строке состояние
-set titlecolor black,yellow # цвет заголовка
+set titlecolor black,yellow # цвет строки заголовка
 set stateflags # используйте правый верхний угол экрана для отображения некоторых флагов состояния
 set promptcolor mint # цвет подсказки
 set selectedcolor white,blue # цвет выделения текста
@@ -42,22 +53,20 @@ set selectedcolor white,blue # цвет выделения текста
 
 # set saveonexit # авто сохранение при выходе (^X)
 
-# set keycolor red,green # цвет функций
-# set functioncolor white,black # цвет названий функций
+# set keycolor red,green # цвет справки
+# set functioncolor white,black # цвет названий справки
 # set errorcolor white,red # цвет ошибки
 
 # set minibar # переносит header вниз
-# set nohelp  # отключает панель функций
+# set nohelp  # отключает справку
 
 # set guidestripe 80         # визуальная ограничительная линия для текста (в символах)
 # set stripecolor black,plum # цвет визуальной ограничительной линии
-
-# set backup # При сохранении файла создайте резервную копию его предыдущей версии, используя текущее имя файла с суффиксом тильда ( ~).
-# set backupdir "directory" # назначить отдельное место хранения всех сохраняемых файлов
 
 # set cutfromcursor # по умолчанию будет вырезать до конца строки вместо всей строки
 # set historylog # включает историю для поиска
 
 # set whitespace ">." # символы для табуляции и пробела
+# set whitespace "»·"
 # set punct ".!?"
 # set brackets "')>]}"
