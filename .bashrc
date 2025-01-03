@@ -9,6 +9,8 @@
 # init tools
 eval "$(zoxide init --cmd cd bash)" # zoxide
 eval "$(thefuck --alias)" # thefuck
+eval "$(fzf --bash)"      # fzf
+source /home/dog/.config/broot/launcher/bash/br # broot init
 
 # Aliases
 
@@ -21,6 +23,10 @@ alias ll="lsd -F -Alh --group-directories-first --sort time"
 alias grep='grep --color=auto'
 alias cat="bat"
 alias dig="dog"
+alias rg="rga"
+
+alias df="df -h"
+alias free="free -h"
 
 # shorts
 alias c="clear"

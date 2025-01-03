@@ -124,5 +124,5 @@
     "css.styleSheets": [
         "**/*.css"
     ],
-    "python.createEnvironment.trigger": "off",
+    "editor.linkedEditing": true, // автоматическое переименование тегов
 }

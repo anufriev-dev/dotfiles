@@ -13,6 +13,7 @@
 
 - link:
     ~/.bashrc: .bashrc
+    ~/.config/vim/vimrc: .vimrc
     ~/.config/git: git
     ~/.config/nano/nanorc: .nanorc
     ~/.config/Code/User/settings.json: vscode/settings.json
