@@ -6,6 +6,6 @@ read -p "Установить расширения для vscode? [Y/n]: " answe
 
 if [[ $answer =~ ^(Y|y|yes)$ || -z $answer ]]; then
     if command -v code &> /dev/null; then
-        cat vscode/extensions.txt | xargs --max-args=1 code --install-extension
+        cat vscode/extensions.txt | xargs --max-args=1 code  --install-extension
     fi
 fi

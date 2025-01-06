@@ -7,10 +7,11 @@
 [[ $- != *i* ]] && return
 
 # init tools
-eval "$(zoxide init --cmd cd bash)" # zoxide
-eval "$(thefuck --alias)" # thefuck
-eval "$(fzf --bash)"      # fzf
-source /home/dog/.config/broot/launcher/bash/br # broot init
+eval "$(zoxide init --cmd cd bash)" > /dev/null # zoxide
+eval "$(thefuck --alias)" > /dev/null           # thefuck
+eval "$(fzf --bash)" > /dev/null                # fzf
+eval "$(ssh-agent -s)" > /dev/null              # ssh
+# source /home/dog/.config/broot/launcher/bash/br # broot init
 
 # Aliases
 
