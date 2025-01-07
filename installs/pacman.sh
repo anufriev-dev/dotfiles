@@ -51,6 +51,7 @@ additional_pkgs=(
     yt-dlp                 # Скачать видео с YouTube
     solanum                # Таймер
     calibre                # Управления электронной библиотекой
+    evince                 # Просмотр документов
     gnome-calculator       # Калькулятор
     gnome-disk-utility     # Управление дисками
     keepassxc              # Управление базой данных паролей
