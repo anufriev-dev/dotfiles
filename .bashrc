@@ -40,6 +40,10 @@ alias h="history"
 alias weather="curl wttr.in" # check weather
 alias ports="ss -tulnp" # check ports
 
+# systemctl
+alias es="systemctl list-unit-files --type=service --state=enabled"
+alias ds="systemctl list-unit-files --type=service --state=disabled"
+
 # for arch linux
 . .bashrc.arch.sh &> /dev/null
 # Rust
