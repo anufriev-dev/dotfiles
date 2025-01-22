@@ -13,6 +13,11 @@ eval "$(fzf --bash)" > /dev/null                # fzf
 eval "$(ssh-agent -s)" > /dev/null              # ssh
 # source /home/dog/.config/broot/launcher/bash/br # broot init
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
 # Aliases
 
 # ls

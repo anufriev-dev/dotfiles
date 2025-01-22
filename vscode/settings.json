@@ -125,4 +125,5 @@
         "**/*.css"
     ],
     "editor.linkedEditing": true, // автоматическое переименование тегов
+    "python.createEnvironment.trigger": "off" // отключение alert'а
 }
