@@ -52,24 +52,24 @@ minimal_pkgs=(
     zlib               # Библиотека реализующая метод сжатия deflate
     xz                 # Библиотека и инструменты командной строки для сжатых файлов XZ и LZMA
     tk                 # Набор инструментов для работы с окнами, используемый с tcl
-    ifuse                  # Подключение файловой системы iPhone или iPod Touch
-    yt-dlp                 # Скачать видео с YouTube
+    ifuse              # Подключение файловой системы iPhone или iPod Touch
+    yt-dlp             # Скачать видео с YouTube
 )
 
 additional_pkgs=(
-    chromium               # Браузер
-    solanum                # Таймер
-    calibre                # Управления электронной библиотекой
-    evince                 # Просмотр документов
-    gnome-calculator       # Калькулятор
-    gnome-disk-utility     # Управление дисками
-    keepassxc              # Управление базой данных паролей
-    libreoffice-fresh-ru   # Офисный пакет на русском языке
-    obsidian               # Управление базой знаний
-    qbittorrent            # Торрент клиент
-    spectacle              # Захват экрана
+    chromium                # Браузер
+    solanum                 # Таймер
+    calibre                 # Управления электронной библиотекой
+    evince                  # Просмотр документов
+    gnome-calculator        # Калькулятор
+    gnome-disk-utility      # Управление дисками
+    keepassxc               # Управление базой данных паролей
+    libreoffice-fresh-ru    # Офисный пакет на русском языке
+    obsidian                # Управление базой знаний
+    qbittorrent             # Торрент клиент
+    spectacle               # Захват экрана
     visual-studio-code-bin  # редактор кода visual studio code !aur
-    ttf-firacode-nerd  # шрифт fira code с дополнительными иконками
+    ttf-firacode-nerd       # шрифт fira code с дополнительными иконками
 )
 
 
