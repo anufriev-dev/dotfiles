@@ -69,7 +69,12 @@ additional_pkgs=(
     qbittorrent             # Торрент клиент
     spectacle               # Захват экрана
     visual-studio-code-bin  # редактор кода visual studio code !aur
-    ttf-firacode-nerd       # шрифт fira code с дополнительными иконками
+    # шрифты
+    ttf-firacode-nerd       # fira code с дополнительными иконками
+    noto-fonts              # Google Noto TTF fonts
+    noto-fonts-cjk          # Google Noto CJK fonts
+    noto-fonts-emoji        # Google Noto emoji fonts
+    ttf-liberation          # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New
 )
 
 
