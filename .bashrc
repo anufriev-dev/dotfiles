@@ -43,6 +43,7 @@ alias h="history"
 
 # castom
 alias weather="curl wttr.in" # check weather
+alias myip="curl icanhazip.com"
 alias ports="ss -tulnp" # check ports
 
 # systemctl
