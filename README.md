@@ -10,6 +10,7 @@
 Install
 
 ``` sh
+cd ~
 git clone https://github.com/anufriev-dev/dotfiles.git --recursive
 cd dotfiles && ./install
 ```
