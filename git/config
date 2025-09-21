@@ -65,3 +65,5 @@
 # кэширует учётные данные, чтобы не вводить их каждый раз
 [credential]
 	helper = cache
+[safe]
+	directory = *
