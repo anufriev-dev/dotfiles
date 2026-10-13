@@ -59,6 +59,7 @@ minimal_pkgs=(
 
 additional_pkgs=(
     chromium                # Браузер
+    lowfi                   # lowfi музыка в терминале
     solanum                 # Таймер
     calibre                 # Управления электронной библиотекой
     evince                  # Просмотр документов
