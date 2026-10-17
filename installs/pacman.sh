@@ -23,6 +23,15 @@ if ! pacman -Q yay &> /dev/null; then
     cd ~/opt || exit 1
 fi
 
+setup_locales() {
+    echo "generating a Russian locale"
+    echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+    echo "ru_RU.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+    sudo locale-gen
+}
+
+setup_locales # генерируем русскую локаль
+
 # Объявляем массивы с пакетами
 minimal_pkgs=(
     fd                 # Замена find
@@ -59,6 +68,8 @@ minimal_pkgs=(
 
 additional_pkgs=(
     chromium                # Браузер
+    filelight               # View disk usage information
+    gwenview                # image viewer
     lowfi                   # lowfi музыка в терминале
     solanum                 # Таймер
     calibre                 # Управления электронной библиотекой
