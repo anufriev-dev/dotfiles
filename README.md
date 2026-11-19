@@ -24,4 +24,4 @@ git pull
 
 ---
 
-[Bootstrap your Dotfiles with dotbot](https://www.elliotdenolf.com/blog/bootstrap-your-dotfiles-with-dotbot)
+[Bootstrap your Dotfiles with dotbot](https://web.archive.org/web/20250415022041/https://www.elliotdenolf.com/blog/bootstrap-your-dotfiles-with-dotbot)
