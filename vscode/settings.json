@@ -44,7 +44,7 @@
     "workbench.preferredHighContrastColorTheme": "One Dark Pro", // Предпочтительная тема для высококонтрастного режима (темная)
     "workbench.preferredHighContrastLightColorTheme": "Atom One Light", // Предпочтительная светлая тема для высококонтрастного режима
     "workbench.preferredDarkColorTheme": "One Dark Pro", // Предпочтительная темная цветовая схема
-    "workbench.preferredLightColorTheme": "Atom One Light", // Предпочтительная светлая цветовая схема
+    "workbench.preferredLightColorTheme": "One Dark Pro", // Предпочтительная светлая цветовая схема
 
     "window.autoDetectColorScheme": true, // Автоматически определяет цветовую схему системы
     "window.autoDetectHighContrast": false, // Отключает автоматическое определение высококонтрастного режима
@@ -71,7 +71,7 @@
     // Расширения
     "extensions.ignoreRecommendations": true, // Игнорировать рекомендации по установке расширений
     "extensions.autoCheckUpdates": false, // Отключить автоматическую проверку обновлений расширений
-    "extensions.autoUpdate": false, // Отключить автоматическое обновление расширений
+    "extensions.autoUpdate": "off", // Отключить автоматическое обновление расширений
 
     // terminal
     "terminal.integrated.cursorStyleInactive": "none", // Стиль курсора в не фокуса (нет)
@@ -125,5 +125,7 @@
         "**/*.css"
     ],
     "editor.linkedEditing": true, // автоматическое переименование тегов
-    "python.createEnvironment.trigger": "off" // отключение alert'а
+    "python.createEnvironment.trigger": "off",
+    "terminal.integrated.initialHint": false,
+    "terminal.integrated.stickyScroll.enabled": false // отключение alert'а
 }

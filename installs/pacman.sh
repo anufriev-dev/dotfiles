@@ -30,11 +30,15 @@ setup_locales() {
     sudo locale-gen
 }
 
-setup_locales # генерируем русскую локаль
+if ! locale -a | grep -q "ru_RU"; then
+    setup_locales # генерируем русскую локаль
+fi
+
 
 # Объявляем массивы с пакетами
 minimal_pkgs=(
     fd                 # Замена find
+    man				   # manual
     git                # Система контроля версий
     less               # Просмотр текстовых файлов
     vim                # Мощный текстовый редактор
@@ -82,6 +86,7 @@ additional_pkgs=(
     qbittorrent             # Торрент клиент
     spectacle               # Захват экрана
     visual-studio-code-bin  # редактор кода visual studio code !aur
+    vscodium-bin			# свободный редактор, fork vs code
     # шрифты
     ttf-firacode-nerd       # fira code с дополнительными иконками
     noto-fonts              # Google Noto TTF fonts
@@ -152,7 +157,7 @@ if [[ $answer =~ ^(Y|y|yes)$ || -z $answer ]]; then
         fi
     done
 
-   # Установка расширений для vscode
+   # Установка расширений для vscode and vscodium
     if pacman -Q code &> /dev/null; then
         # echo "Установка расширений vscode"
         vscode/install.sh
